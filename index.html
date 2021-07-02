@@ -98,63 +98,67 @@
       </nav>
     </header>
 
-    <main>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio tempore
-        deserunt cupiditate, dolor atque, praesentium consectetur, ipsam
-        similique nesciunt in quo. Officia velit rem voluptates dolorum,
-        possimus nemo reprehenderit corporis. Accusamus distinctio ut deleniti
-        dolor et suscipit alias ea provident, hic perferendis unde animi
-        praesentium neque fugit sit numquam illo deserunt dolore possimus magni
-        molestiae quaerat. In quidem provident unde? Aliquid eum unde suscipit
-        sit facere aspernatur laborum quod sint nobis a minus non inventore
-        voluptatum necessitatibus possimus enim optio, vero excepturi sunt ex
-        vel adipisci. Hic, voluptate dicta! Impedit? Sed illum nesciunt iure?
-        Placeat quo voluptatem nihil ipsum non praesentium odit magnam,
-        consectetur accusantium doloremque tempore impedit blanditiis pariatur.
-        Praesentium ut quo nam debitis, quibusdam facere facilis iure assumenda!
-        Nihil accusantium labore veniam odio voluptatibus possimus debitis,
-        magni tenetur porro, veritatis dolorem vero. Neque possimus nihil,
-        consequuntur iste magnam, praesentium nesciunt assumenda cupiditate sit
-        ratione velit quis ducimus eveniet.
-      </p>
-      <article>producto 1</article>
-      <img
-        src="https://www.tecnologia-informatica.com/wp-content/uploads/2018/07/funciones-de-la-computadora-1.jpeg"
-        alt=""
-      />
-      <br />
-      <button>Comprar</button>
-      <article>producto 2</article>
-      <button>Comprar</button>
-      <br />
-      <input
-        type="text"
-        placeholder="Ingrese la cantidad de hardware que quiere agregar"
-        size="50px"
-      />
-      <button>enviar</button>
-      <br />
-      <input type="text" placeholder="Ingrese el marca" size="50px" />
-      <button>enviar</button>
-      <br />
-      <input type="text" placeholder="Ingrese el modelo" size="50px" />
-      <button>enviar</button>
-      <br />
-      <input type="text" placeholder="Ingrese el precio" size="50px" />
-      <button>enviar</button>
-      <br />
-      <input type="text" placeholder="Que le gustaria comprar" size="50px" />
-      <button>enviar</button>
+    <main></p>
+      <!--Form Cantidad de elementos-->
+      <form id="formCantidadHardware">
+        <label for="cantidadHardware">Ingrese la cantidad de hardware que desea crear</label>
+        <input
+          type="number"
+          placeholder="Numero aqui"
+          size="50px"
+          id="cantidadHardware"
+          min="0"
+          name="cantidadHardware"
+        />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <var id="cantidadSeleccionada"> </var>
+
+      <section>
+        <form id="crearProducto">
+          <br />
+          <input
+            id="inputMarca"
+            type="text"
+            placeholder="Ingrese el marca"
+            size="50px"
+          />
+          <br />
+          <input
+            id="inputModelo"
+            type="text"
+            placeholder="Ingrese el modelo"
+            size="50px"
+          />
+          <br />
+          <input
+            id="inputPrecio"
+            type="text"
+            placeholder="Ingrese el precio"
+            size="50px"
+          />
+          <br />
+          <button type="submit">Crear</button>
+        </form>
+      </section>
     </main>
 
-    <footer class="bg-dark">
-      <p class="text-light">este es mi footer</p>
-    </footer>
+    <div id="resultadoDeLaCompra"></div>
+
+<!--TEMPLATE CREACION DE PRODUCTOS-->
+    <template id="producto">
+      <h3 id="nombre"></h3>
+      <p id="modelo"></p>
+      <var id="precio"></var>
+      <button id="comprar">Comprar</button>
+    </template>
+
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!--   <script src="desafio.js"></script> -->
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js" ></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js" ></script>
     <!--CAMADA 14470-->
+    <script src="index.js"></script>
+  
   </body>
 </html>

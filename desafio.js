@@ -78,3 +78,14 @@ while (isConfirmed) {
       break;
   }
 }
+
+// Creando elemenos desde objetos
+
+for (const producto of listaHardware) {
+  let contenedor = document.createElement("div");
+  //Definimos el innerHTML del elemento con una plantilla de texto
+  contenedor.innerHTML = `<h3> Marca: ${producto.marca}</h3>
+                          <p>  Modelo: ${producto.modelo}</p>
+                          <b> $ ${producto.precio}</b>`;
+  document.body.appendChild(contenedor);
+}
