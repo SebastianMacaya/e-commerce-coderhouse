@@ -60,7 +60,7 @@ const initProductos = () => {
       crearProducto(producto);
     }
   };
-
+  //Creo los productos usando la template
   const crearProducto = (producto) => {
     const template = document.getElementById("producto");
     const productoElement = template.content.cloneNode(true);
@@ -74,6 +74,7 @@ const initProductos = () => {
     productoElement.getElementById(
       "precio"
     ).textContent = `$ ${producto.precio}`;
+    //Sumo la cantidad de productos comprados
     productoElement.getElementById("comprar").addEventListener("click", () => {
       precioDeLaCompra += Number(producto.precio);
 
