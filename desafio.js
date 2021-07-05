@@ -1,91 +1,88 @@
-// array
-const listaHardware = [];
+const initProductos = () => {
+  //inicializo mis variables
+  let precioDeLaCompra = 0;
+  let cantidadHardware;
+  const listaHardware = [];
 
-// constructor
+  //Obtengo elementos del DOM con los ID
+  const formCantidadHardware = document.getElementById("formCantidadHardware");
+  const inputCantidadHardware = document.getElementById("cantidadHardware");
+  const cantidadSeleccionada = document.getElementById("cantidadSeleccionada");
 
-class Hardware {
-  constructor(marca, modelo, precio) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.precio = precio;
-  }
-  // funcion leer
-  leer() {
-    console.log("Usted Creo " + this.modelo + "al precio de $" + this.precio);
-  }
-}
+  const formCrearProducto = document.getElementById("crearProducto");
+  const inputMarca = document.getElementById("inputMarca");
+  const inputModelo = document.getElementById("inputModelo");
+  const inputPrecio = document.getElementById("inputPrecio");
 
-//Creando objeto por usuario
-var cantidadDeHardWare = parseInt(
-  prompt("Ingrese cuantos hardware quiere agregar")
-);
+  const resultadoDeLaCompra = document.getElementById("resultadoDeLaCompra");
 
-for (i = 0; i < cantidadDeHardWare; i++) {
-  let marca = prompt("Ingrese la marca");
-  let modelo = prompt("Ingrese el modelo");
-  let precio = parseInt(prompt("Ingrese el precio"));
-  const obj = new Hardware(marca, modelo, precio);
-  //Guardo los hardware en un array
-  listaHardware.push(obj);
-  obj.leer();
-}
+  //oculto el form de crear productos
+  formCrearProducto.style.display = "none";
 
-console.log(listaHardware);
+  //AGREGO EVENTO AL ENVIAR CANTIDAD DE HARDWARE A CREAR
+  formCantidadHardware.addEventListener("submit", (e) => {
+    //evito el comportamiento normal del submit
+    e.preventDefault();
 
-//test beta
-let total = 0;
+    //asigno el valor numerico a cantidad de hardware
+    cantidadHardware = Number(inputCantidadHardware.value);
 
-let isConfirmed = true;
+    //oculto el form de la cantidad de hardware
+    formCantidadHardware.style.display = "none";
 
-//El usuario elige el hardware  a comprar
-const comprar = () => {
-  return parseInt(prompt(mensaje));
+    cantidadSeleccionada.textContent = `Has seleccionado ${cantidadHardware} hardwares`;
+    formCrearProducto.style.display = "block";
+  });
+
+  //AGREGO EVENTO AL ENVIAR LOS PRODUCTOS
+  formCrearProducto.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const marca = inputMarca.value;
+    const modelo = inputModelo.value;
+    const precio = inputPrecio.value;
+    //guardo el producto en el array
+    const producto = { marca, modelo, precio };
+    listaHardware.push(producto);
+
+    inputMarca.value = "";
+    inputModelo.value = "";
+    inputPrecio.value = "";
+    //oculto el form una vez que se cumpla la cantidad a agregar
+    if (listaHardware.length === cantidadHardware) {
+      formCrearProducto.style.display = "none";
+      crearProductos();
+    }
+  });
+
+  const crearProductos = () => {
+    for (const producto of listaHardware) {
+      crearProducto(producto);
+    }
+  };
+  //Creo los productos usando la template
+  const crearProducto = (producto) => {
+    const template = document.getElementById("producto");
+    const productoElement = template.content.cloneNode(true);
+
+    productoElement.getElementById(
+      "nombre"
+    ).textContent = `Marca: ${producto.marca}`;
+    productoElement.getElementById(
+      "modelo"
+    ).textContent = `Modelo: ${producto.modelo}`;
+    productoElement.getElementById(
+      "precio"
+    ).textContent = `$ ${producto.precio}`;
+    //Sumo la cantidad de productos comprados
+    productoElement.getElementById("comprar").addEventListener("click", () => {
+      precioDeLaCompra += Number(producto.precio);
+
+      resultadoDeLaCompra.textContent = `Lleva usted gastados $${precioDeLaCompra}`;
+    });
+
+    document.body.appendChild(productoElement);
+  };
 };
 
-//Mensaje estatico de lista de compra
-let mensaje = `
-¿Qué le gustaría comprar?
- 0:Salir`;
-//funcion que muestra la lista de hardware para comprar
-function listaCompra() {
-  for (i = 0; i < cantidadDeHardWare; i++) {
-    mensaje += `\n ${i + 1}:${listaHardware[i].marca} $ ${
-      listaHardware[i].precio
-    }`;
-  }
-}
-listaCompra(mensaje);
-
-//Inicio switch
-let result = 0;
-
-while (isConfirmed) {
-  result = comprar();
-
-  switch (true) {
-    case result > 0 && result <= cantidadDeHardWare:
-      total += listaHardware[result - 1].precio;
-      break;
-    case result == 0:
-      isConfirmed = confirm("Seguro que quiere salir?");
-      isConfirmed = !isConfirmed;
-      alert("Usted nos debe $" + total);
-      alert("Gracias por elegirnos");
-      break;
-
-    default:
-      alert("Dato incorrecto, por favor vuelva a intentar");
-      break;
-  }
-}
-
-// Creando elemenos desde objetos
-
-for (const producto of listaHardware) {
-  let contenedor = document.createElement("div");
-  //Definimos el innerHTML del elemento con una plantilla de texto
-  contenedor.innerHTML = `<h3> Marca: ${producto.marca}</h3>
-                          <p>  Modelo: ${producto.modelo}</p>
-                          <b> $ ${producto.precio}</b>`;
-  document.body.appendChild(contenedor);
-}
+initProductos();
