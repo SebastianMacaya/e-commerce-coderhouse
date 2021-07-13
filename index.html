@@ -97,65 +97,24 @@
         </div>
       </nav>
     </header>
+    <div class="container">
+      <h1>Carrito</h1>
+      <hr />
+      <div class="row" id="items"></div>
+    </div>
 
-    <main>
-      <!--Form Cantidad de elementos-->
-      <form id="formCantidadHardware">
-        <label for="cantidadHardware"
-          >Ingrese la cantidad de hardware que desea crear</label
-        >
-        <input
-          type="number"
-          placeholder="Numero aqui"
-          size="50px"
-          id="cantidadHardware"
-          min="0"
-          name="cantidadHardware"
-        />
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
-
-      <var id="cantidadSeleccionada"> </var>
-
-      <!--Creo productos-->
-      <section>
-        <form id="crearProducto">
-          <br />
-          <input
-            id="inputMarca"
-            type="text"
-            placeholder="Ingrese el marca"
-            size="50px"
-          />
-          <br />
-          <input
-            id="inputModelo"
-            type="text"
-            placeholder="Ingrese el modelo"
-            autocomplete="off"
-            size="50px"
-          />
-          <br />
-          <input
-            id="inputPrecio"
-            type="number"
-            placeholder="Ingrese el precio"
-            size="50px"
-          />
-          <br />
-          <button type="submit">Crear</button>
-        </form>
-      </section>
-    </main>
-
-    <div id="resultadoDeLaCompra"></div>
-
-    <!--TEMPLATE CREACION DE PRODUCTOS-->
-    <template id="producto">
-      <h3 id="nombre"></h3>
-      <p id="modelo"></p>
-      <var id="precio"></var>
-      <button id="comprar">Comprar</button>
+    <!--Template-->
+    <template id="template-card">
+      <div class="col-12 mb-2 col-md-4">
+        <div class="card">
+          <img src="" alt="" class="card-img-top" />
+          <div class="card-body">
+            <h5>Titulo</h5>
+            <p>precio</p>
+            <button class="btn btn-dark">Comprar</button>
+          </div>
+        </div>
+      </div>
     </template>
 
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
