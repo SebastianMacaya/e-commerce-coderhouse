@@ -14,7 +14,7 @@ const fetchData = async () => {
     console.log(error);
   }
 };
-
+//pinto las cards con la template
 const pintarCards = (data) => {
   console.log(data);
   data.forEach((producto) => {
@@ -24,6 +24,8 @@ const pintarCards = (data) => {
     templateCard
       .querySelector("img")
       .setAttribute("src", producto.thumbnailUrl);
+    //asigno id dinamico
+    templateCard.querySelector(".comprar").dataset.id = producto.id;
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
   });
