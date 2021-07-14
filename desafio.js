@@ -11,6 +11,7 @@ let carrito = {};
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener("DOMContentLoaded", (e) => {
   fetchData();
+  //agrego que se guarde en localstorage
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     pintarCarrito();
@@ -113,6 +114,7 @@ const pintarFooter = () => {
     0
   );
 
+  templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
   templateFooter.querySelector("span").textContent = nPrecio;
 
