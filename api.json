@@ -3,36 +3,59 @@
       "precio": 42520,
       "id": 1,
       "title": "Procesador AMD RYZEN 5 3700X 4.4 GHz AM4 Wraith Prism RGB Led Cooler",
-      "thumbnailUrl": "https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/ItemImages/9940_800.jpg"
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14084_Procesador_AMD_RYZEN_7_3700X_4.4_GHz_AM4_Wraith_Prism_RGB_Led_Cooler_1f645e9a-grn.jpg"
     },
     {
-      "precio": 300,
+      "precio": 1900,
       "id": 2,
-      "title": "Pizza",
-      "thumbnailUrl": "https://picsum.photos/id/10/600"
+      "title": "Procesador AMD Ryzen 5 1600 AF Zen+ 12nm AM4 Wraith Stealth Cooler",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17898_Procesador_AMD_Ryzen_5_1600_AF_Zen__12nm_AM4_Wraith_Stealth_Cooler_187bb9ab-grn.jpg"
     },
     {
-      "precio": 100,
+      "precio": 21000,
       "id": 3,
-      "title": "Agua",
-      "thumbnailUrl": "https://picsum.photos/id/20/600"
+      "title": "Placa de Video Zotac GeForce RTX 3070 8GB GDDR6 Twin Edge OC",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22241_Placa_de_Video_Zotac_GeForce_RTX_3070_8GB_GDDR6_Twin_Edge_OC_cb8b31f6-grn.jpg"
     },
     {
-      "precio": 50,
+      "precio": 6450,
       "id": 4,
-      "title": "Sandía",
-      "thumbnailUrl": "https://picsum.photos/id/30/600"
+      "title": "Gabinete Kolink Void ARGB ATX Vidrio Templado",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20250_Gabinete_Kolink_Void_ARGB_ATX_Vidrio_Templado_f962dc11-grn.jpg"
     },
     {
-      "precio": 10,
+      "precio": 46230,
       "id": 5,
-      "title": "Mango",
-      "thumbnailUrl": "https://picsum.photos/id/40/600"
+      "title": "Procesador Intel Core i7 10700K 5.1GHz Turbo 1200 Comet Lake",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_18879_Procesador_Intel_Core_i7_10700K_5.1GHz_Turbo_1200_Comet_Lake_c3f07566-grn.jpg"
     },
     {
-      "precio": 150,
+      "precio": 64800,
       "id": 6,
-      "title": "Chela",
-      "thumbnailUrl": "https://picsum.photos/id/50/600"
+      "title": "Procesador Intel Core i9 10900KF 5.3GHz Turbo ",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20057_Procesador_Intel_Core_i9_10900KF_5.3GHz_Turbo_54113e38-grn.jpg"
+    },
+    {
+      "precio": 75800,
+      "id": 7,
+      "title": "Procesador Intel Core i7 10900KF 5.3GHz Turbo ",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_20057_Procesador_Intel_Core_i9_10900KF_5.3GHz_Turbo_54113e38-grn.jpg"
+    }, {
+      "precio": 42520,
+      "id": 8,
+      "title": "Procesador AMD RYZEN 5 3700X 4.4 GHz AM4 Wraith Prism RGB Led Cooler",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14084_Procesador_AMD_RYZEN_7_3700X_4.4_GHz_AM4_Wraith_Prism_RGB_Led_Cooler_1f645e9a-grn.jpg"
+    },
+    {
+      "precio": 19000,
+      "id": 9,
+      "title": "Procesador AMD Ryzen 5 1600 AF Zen+ 12nm AM4 Wraith Stealth Cooler",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17898_Procesador_AMD_Ryzen_5_1600_AF_Zen__12nm_AM4_Wraith_Stealth_Cooler_187bb9ab-grn.jpg"
+    },
+    {
+      "precio": 31000,
+      "id": 10,
+      "title": "Placa de Video Zotac GeForce RTX 3080 8GB GDDR6 Twin Edge OC",
+      "thumbnailUrl": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22241_Placa_de_Video_Zotac_GeForce_RTX_3070_8GB_GDDR6_Twin_Edge_OC_cb8b31f6-grn.jpg"
     }
   ]
