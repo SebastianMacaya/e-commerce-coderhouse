@@ -80,7 +80,6 @@ const pintarCarrito = () => {
     templateCarrito.querySelectorAll("td")[1].textContent = producto.cantidad;
     templateCarrito.querySelector("span").textContent =
       producto.precio * producto.cantidad;
-
     //botones
     templateCarrito.querySelector(".btn-info").dataset.id = producto.id;
     templateCarrito.querySelector(".btn-danger").dataset.id = producto.id;
@@ -105,10 +104,11 @@ const pintarFooter = () => {
   }
 
   // sumar cantidad y sumar totales
-  const nCantidad = Object.values(carrito).reduce(
+  var nCantidad = Object.values(carrito).reduce(
     (acc, { cantidad }) => acc + cantidad,
     0
   );
+
   const nPrecio = Object.values(carrito).reduce(
     (acc, { cantidad, precio }) => acc + cantidad * precio,
     0
@@ -116,6 +116,8 @@ const pintarFooter = () => {
 
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
+  //Agrego nº de cantidad en el logo carrito
+  $(".badgeCarrito")[0].textContent = nCantidad;
   templateFooter.querySelector("span").textContent = nPrecio;
 
   const clone = templateFooter.cloneNode(true);
