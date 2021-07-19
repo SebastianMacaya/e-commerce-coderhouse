@@ -152,3 +152,16 @@ const btnAumentarDisminuir = (e) => {
   }
   e.stopPropagation();
 };
+
+//Agregamos dos botones con jQuery
+$("body").append(
+  '<button id="btn1" class="btn btn-success w-100 ">Finalizar compra</button>'
+);
+//Asociamos el evento click
+$("#btn1").click(function () {
+  if (jQuery.isEmptyObject(carrito)) {
+    alert("agregue algun producto primero ;) ");
+  } else alert("Gracias por comprar");
+  carrito = {};
+  pintarCarrito();
+});
