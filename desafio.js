@@ -165,3 +165,19 @@ $("#btn1").click(function () {
   carrito = {};
   pintarCarrito();
 });
+
+// Animaciones Jquery
+//Agrego botón y un div con jQuery y oculto el div
+$("body").prepend(
+  '<button id="btn1" class="btn btn-warning w-100">Descuento Hot Sale 50% OFF</button>'
+);
+$("body").prepend(`<div id="div1" class="text-center" style="height: auto">
+                        <h3 class="text-center">¡CODIGO DE DESCUENTO! 50% OFF</h3>
+                        <h4>CODIGO: CAMADA14470</h4>
+                    </div>`);
+$("#div1").hide();
+//Muestro el div usando toggle
+
+$("#btn1").click(() => {
+  $("#div1").toggle("slow");
+});
