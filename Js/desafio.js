@@ -25,14 +25,19 @@ items.addEventListener("click", (e) => {
   btnAumentarDisminuir(e);
 });
 
-// Traer productos
+/* ------------ Traer productos (Reemplazo Js vanilla por Jquery) ----------- */
 const fetchData = async () => {
-  const res = await fetch("api.json");
-  const data = await res.json();
-  pintarCards(data);
+  const URLGET = "api.json";
+  $.get(URLGET, async function (respuesta, estado) {
+    if (estado === "success") {
+      let misDatos = respuesta;
+      const data = await misDatos;
+      pintarCards(data);
+    }
+  });
 };
 
-// Pintar productos
+/* ---------------------------- Pintar productos ---------------------------- */
 const pintarCards = (data) => {
   data.forEach((item) => {
     templateCard.querySelector("h5").textContent = item.title;
@@ -70,7 +75,7 @@ const setCarrito = (item) => {
   pintarCarrito();
 };
 
-//Pintar carrito
+/* ----------------------------- Pintar carrito ----------------------------- */
 const pintarCarrito = () => {
   items.innerHTML = "";
 
@@ -103,7 +108,7 @@ const pintarFooter = () => {
     return;
   }
 
-  // sumar cantidad y sumar totales
+  /* --------------------- sumar cantidad y sumar totales --------------------- */
   var nCantidad = Object.values(carrito).reduce(
     (acc, { cantidad }) => acc + cantidad,
     0
@@ -116,7 +121,7 @@ const pintarFooter = () => {
 
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
-  //Agrego nº de cantidad en el logo carrito
+  /* ---------------- Agrego nº de cantidad en el logo carrito ---------------- */
   $(".badgeCarrito")[0].textContent = nCantidad;
   templateFooter.querySelector("span").textContent = nPrecio;
 
@@ -153,11 +158,11 @@ const btnAumentarDisminuir = (e) => {
   e.stopPropagation();
 };
 
-//Agrego boton  finalizar compra con jQuery
+/* ---------------- Agrego boton  finalizar compra con jQuery --------------- */
 $("body").append(
   '<button id="btn1" class="btn btn-success w-100 ">Finalizar compra</button>'
 );
-//Asociamos el evento click
+/* ------------------------ Asociamos el evento click ----------------------- */
 $("#btn1").click(function () {
   if (jQuery.isEmptyObject(carrito)) {
     alert("agregue algun producto primero ;) ");
@@ -166,8 +171,8 @@ $("#btn1").click(function () {
   pintarCarrito();
 });
 
-// Animaciones Jquery
-//Agrego botón y un div con jQuery y oculto el div
+/* --------------------------- Animaciones Jquery --------------------------- */
+/* ------------ Agrego botón y un div con jQuery y oculto el div ------------ */
 $("body").prepend(
   '<button id="btn1" class="btn btn-warning w-100">Descuento Hot Sale 50% OFF</button>'
 );
