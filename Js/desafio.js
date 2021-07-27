@@ -165,8 +165,13 @@ $("body").append(
 /* ------------------------ Asociamos el evento click ----------------------- */
 $("#btn1").click(function () {
   if (jQuery.isEmptyObject(carrito)) {
-    alert("agregue algun producto primero ;) ");
-  } else alert("Gracias por comprar");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Debe seleccionar algun producto primero!",
+    });
+  } else Swal.fire("Gracias por confiar en nosotros", "Su pedido se realizo correctamente!", "success");
+
   carrito = {};
   pintarCarrito();
 });
